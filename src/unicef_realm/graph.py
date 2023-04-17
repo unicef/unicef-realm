@@ -15,8 +15,7 @@ class SyncResult:
 
     def log(self, *result):
         if len(result) == 2:
-            obj = {True: result[0],
-                   False: result[0].pk}[self.keep_records]
+            obj = {True: result[0], False: result[0].pk}[self.keep_records]
             if result[1]:
                 self.created.append(obj)
             else:

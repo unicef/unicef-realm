@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 @admin.register(Region)
 class RegionAdmin(ExtraButtonsMixin, ModelAdmin):
-    list_display = ['code', 'name']
+    list_display = ["code", "name"]
 
     @button()
     def sync(self, request):
@@ -24,9 +24,9 @@ class RegionAdmin(ExtraButtonsMixin, ModelAdmin):
 
 @admin.register(BusinessArea)
 class BusinessAreaAdmin(ExtraButtonsMixin, ModelAdmin):
-    list_display = ['code', 'name', 'long_name', 'region', 'country']
-    list_filter = ['region', 'country']
-    search_fields = ('name',)
+    list_display = ["code", "name", "long_name", "region", "country"]
+    list_filter = ["region", "country"]
+    search_fields = ("name",)
 
     @button()
     def sync(self, request):
@@ -39,7 +39,13 @@ class BusinessAreaAdmin(ExtraButtonsMixin, ModelAdmin):
 
 @admin.register(UserRole)
 class UserRoleAdmin(ModelAdmin):
-    search_fields = ('user__username', 'group__name', )
-    list_display = ('user', 'group', 'target')
-    list_filter = ('group', 'target', )
-    raw_id_fields = ('user', 'group', 'target')
+    search_fields = (
+        "user__username",
+        "group__name",
+    )
+    list_display = ("user", "group", "target")
+    list_filter = (
+        "group",
+        "target",
+    )
+    raw_id_fields = ("user", "group", "target")
