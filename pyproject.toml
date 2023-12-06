@@ -30,6 +30,7 @@ dependencies = [
     "django-countries",
     "django-picklefield",
     "requests",
+    "setuptools"  # temporary for python 3.12
 ]
 
 [project.optional-dependencies]
